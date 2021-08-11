@@ -21,8 +21,4 @@ class Produto
 	{ 
 	    return $this->preco; 
 	}
-
-	public function getQuantidade() { 
-	    return $this->estoque; 
-	}
 } 

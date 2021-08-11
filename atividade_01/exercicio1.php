@@ -18,4 +18,17 @@ print("<br><br>");
 foreach ($c1->getItens() as $item) 
 { 
     print 'Item: ' . $item->getDescricao() . "<br>\n"; 
+    print 'Preço: ' . $item->getPreco() . "<br>\n"; 
 } 
+
+/*
+$total = 0;
+foreach ($c1->getItens() as $item) { 
+    $total = $total + ($item->getPreco() * $item->getQuantidade()); 
+} 
+print '<br><br>';
+print $total;
+*/
+print '<br><br>';
+print $c1->get_total_a_ser_pago();
+
