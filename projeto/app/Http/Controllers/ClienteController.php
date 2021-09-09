@@ -10,15 +10,13 @@ class ClienteController extends Controller
         ['id'=> 1, 'nome'=>'Orlando'],
         ['id'=> 2, 'nome'=>'Ana'],
         ['id'=> 3, 'nome'=>'Lucas'],
-        ['id'=> 4, 'nome'=>'Lourdes']
+        ['id'=> 4, 'nome'=>'Lourdes'],
+        ['id'=> 5, 'nome'=>'Pedro']
     ];
     public function index()
     {
-        echo '<ol>';
-        foreach ($this->clientes as $cliente) {
-            echo '<li>' . $cliente['nome'] . '</li>';
-        }
-        echo '</ol>';
+        $clientes = $this->clientes;
+        return view('clientes.index',compact(['clientes']));
     }
 
     /**
@@ -28,18 +26,13 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('clientes.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $dados = $request->all();
+        dd($dados);
     }
 
     /**
