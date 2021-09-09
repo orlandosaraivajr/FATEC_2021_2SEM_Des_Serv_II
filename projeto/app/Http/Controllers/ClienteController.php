@@ -72,15 +72,13 @@ class ClienteController extends Controller
         return redirect()->route('clientes.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $clientes = session('clientes');
+        $index = $this->getIndex($id, $clientes);
+        array_splice($clientes, $index, 1);
+        session(['clientes' => $clientes]);
+        return redirect()->route('clientes.index');
     }
 
     private function getIndex($id, $clientes) {
