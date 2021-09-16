@@ -23,8 +23,12 @@ class ClienteController extends Controller
 
     public function index()
     {
+        $titulo = 'Lista de Clientes';
         $clientes = session('clientes');
-        return view('clientes.index',compact(['clientes']));
+        # $clientes = [];
+        # return view('clientes.index',compact(['clientes','titulo']));
+        # return view('clientes.index', ['clientes'=>$clientes, 'titulo'=>$titulo]);
+        return view('clientes.index')->with('clientes',$clientes)->with('titulo',$titulo);
     }
 
     /**
